@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Login(props) {
+
+    const [User, setUser] = useState('Login');
+    const [Reset, setReset] = useState(false);
+
+    const handleLogin = () => {
+
+    }
+
     return (
         <main id="main">
             <section className="breadcrumb_part">
@@ -44,7 +52,7 @@ function Login(props) {
                                                 <input type="checkbox" id="f-option" name="selector" />
                                                 <label htmlFor="f-option">Remember me</label>
                                             </div>
-                                            <button type="submit" value="submit" className="btn_3">
+                                            <button onClick={handleLogin} type="submit" value="submit" className="btn_3">
                                                 log in
                                             </button>
                                             <a className="lost_pass" href="#">forget password?</a>
