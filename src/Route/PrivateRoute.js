@@ -5,7 +5,7 @@ import { isLogin } from '../Utilies';
 function PrivateRoute({ component: Component, ...rest }) {
     return (
         <Route {...rest} render = {props => (
-            isLogin() 
+            isLogin()
             ?
             <Component {...props} />
             :
