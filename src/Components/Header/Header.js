@@ -13,12 +13,12 @@ function Header(props) {
             <div className="container">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-lg-12">
-                        <nav className="navbar navbar-expand-lg navbar-light">
+                        <nav className={'navbar navbar-expand-lg navbar-light ${value.theme}'}>
                             <a className="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo" /> </a>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() => value.toggle_theme(value.theme)}>
                                 <span className="menu_icon"><i className="fas fa-bars" /></span>
                             </button>
-                            <div className="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                            <div className={'collapse navbar-collapse main-menu-item ${value.theme'} id="navbarSupportedContent">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to={"/"}>Home</NavLink>

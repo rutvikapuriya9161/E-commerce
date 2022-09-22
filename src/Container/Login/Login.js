@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 import React, { useState } from 'react';
-import { signInAction } from '../../Redux/Action/Auth.Action';
+import { signInAction, signUpAction } from '../../Redux/Action/Auth.Action';
 import { useDispatch } from 'react-redux';
 
 function Login(props) {
@@ -55,7 +55,7 @@ function Login(props) {
         }
 
         console.log(values);
-        // dispatch(signUpAction(values))
+        dispatch(signUpAction(values))
     }
 
     const handleLogin = (values) => {

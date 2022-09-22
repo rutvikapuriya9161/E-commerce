@@ -1,15 +1,15 @@
-import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
+import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBFJdbK1HdAHWEkOaY9qFpMtWzpOZq7s4k",
-    authDomain: "city-hospital-872c2.firebaseapp.com",
-    projectId: "city-hospital-872c2",
-    storageBucket: "city-hospital-872c2.appspot.com",
-    messagingSenderId: "835957069022",
-    appId: "1:835957069022:web:6ba0133c39814c59fbde4f",
-    measurementId: "G-HV3F3PZYC4"
+    apiKey: "AIzaSyBAVjtNlSWYLQ3Q1CntThGcuxno52cVar8",
+    authDomain: "e-commerce-aa6b8.firebaseapp.com",
+    projectId: "e-commerce-aa6b8",
+    storageBucket: "e-commerce-aa6b8.appspot.com",
+    messagingSenderId: "598144025504",
+    appId: "1:598144025504:web:ccc6b7142906c26c619ac5",
+    measurementId: "G-S42KYXZER7"
 };
 
 const app = initializeApp(firebaseConfig);

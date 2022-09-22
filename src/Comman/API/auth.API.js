@@ -1,5 +1,38 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Firebase";
+
+export const SignUpAPI = (data) => {
+    console.log("SignUpAPI", data);
+
+    return new Promise((resolve, reject) => {
+        createUserWithEmailAndPassword(auth, data.email, data.Password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+
+            onAuthStateChanged(auth, (user) => {
+                sendEmailVerification(auth.currentUser)
+                .then(() => {
+                    resolve({ payload: "Plase Cheack Your Email" });
+                }) 
+                .catch((e) => {
+                    reject({ payload: e });
+                })
+            });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMassage = error.massage;
+
+            if(errorCode.localCompare("auth/your-email-already-in-use") == 0) {
+                resolve({ payload: "Your Email Is Already Verified" });
+            } else {
+                reject({ payload: errorCode });
+            }
+        });
+    })
+}
+
 
 export const SignInAPI = (data) => {
     console.log("SignInAPI", data);

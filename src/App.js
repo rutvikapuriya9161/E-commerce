@@ -18,29 +18,32 @@ import SingleBlog from './Container/SingleBlog/SingleBlog';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Store';
 import PublicRoute from './Route/PublicRoute';
+import ToggleThemeContext from './Context/ThemeContext';
 
 function App() {
   return (
     <div>
       <Provider store={store}>
-        <Header />
+        <ToggleThemeContext>
+          <Header />
 
-        <Switch>
-          <PublicRoute path={"/"} exact component={Home} />
-          <PublicRoute path={"/About"} exact component={About} />
-          <PublicRoute path={"/ProductList"} exact component={ProductList} />
-          <PublicRoute path={"/ProductDetail"} exact component={ProductDetail} />
-          <PublicRoute path={"/Login"} exact component={Login} />
-          <PublicRoute path={"/ProductCheckout"} exact component={ProductCheckout} />
-          <PublicRoute path={"/ShopingCart"} exact component={ShopingCart} />
-          <PublicRoute path={"/Confirmation"} exact component={Confirmation} />
-          <PublicRoute path={"/Elements"} exact component={Elements} />
-          <PublicRoute path={"/Contact"} exact component={Contact} />
-          <PublicRoute path={"/Blog"} exact component={Blog} />
-          <PublicRoute path={"/SingleBlog"} exact component={SingleBlog} />
-        </Switch>
+          <Switch>
+            <PublicRoute path={"/"} exact component={Home} />
+            <PublicRoute path={"/About"} exact component={About} />
+            <PublicRoute path={"/ProductList"} exact component={ProductList} />
+            <PublicRoute path={"/ProductDetail"} exact component={ProductDetail} />
+            <PublicRoute path={"/Login"} exact component={Login} />
+            <PublicRoute path={"/ProductCheckout"} exact component={ProductCheckout} />
+            <PublicRoute path={"/ShopingCart"} exact component={ShopingCart} />
+            <PublicRoute path={"/Confirmation"} exact component={Confirmation} />
+            <PublicRoute path={"/Elements"} exact component={Elements} />
+            <PublicRoute path={"/Contact"} exact component={Contact} />
+            <PublicRoute path={"/Blog"} exact component={Blog} />
+            <PublicRoute path={"/SingleBlog"} exact component={SingleBlog} />
+          </Switch>
 
-        <Footer />
+          <Footer />
+        </ToggleThemeContext>
       </Provider>
 
     </div>
